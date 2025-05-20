@@ -12,6 +12,7 @@ const MovieForm: React.FC<MovieFormProps> = ({ onAdd }) => {
   const [year, setYear] = useState('');
   const [poster, setPoster] = useState('');
   const [description, setDescription] = useState('');
+  const [runtime, setRuntime] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,11 +23,13 @@ const MovieForm: React.FC<MovieFormProps> = ({ onAdd }) => {
       year,
       poster,
       description,
+      runtime: runtime ? `${runtime} мин` : undefined,
     });
     setTitle('');
     setYear('');
     setPoster('');
     setDescription('');
+    setRuntime('');
   };
 
   return (
@@ -34,6 +37,7 @@ const MovieForm: React.FC<MovieFormProps> = ({ onAdd }) => {
       <TextField label="Название" value={title} onChange={e => setTitle(e.target.value)} fullWidth margin="normal" required />
       <TextField label="Год" value={year} onChange={e => setYear(e.target.value)} fullWidth margin="normal" required />
       <TextField label="Постер (URL)" value={poster} onChange={e => setPoster(e.target.value)} fullWidth margin="normal" required />
+      <TextField label="Время (минуты)" value={runtime} onChange={e => setRuntime(e.target.value.replace(/\D/g, ''))} fullWidth margin="normal" inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} />
       <TextField label="Описание" value={description} onChange={e => setDescription(e.target.value)} fullWidth margin="normal" multiline rows={3} />
       <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
         Добавить фильм

@@ -40,6 +40,7 @@ export async function getMovieById(id: string): Promise<Movie | null> {
       year: response.data.Year,
       poster: response.data.Poster !== "N/A" ? response.data.Poster : "",
       description: response.data.Plot,
+      runtime: response.data.Runtime,
     };
   }
   return null;

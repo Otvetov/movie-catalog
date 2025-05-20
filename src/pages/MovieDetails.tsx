@@ -62,12 +62,17 @@ const MovieDetails: React.FC = () => {
           image={movie.poster}
           alt={movie.title}
         />
-        <CardContent>
-          <Typography variant="h4" gutterBottom>{movie.title} ({movie.year})</Typography>
-          <Typography variant="body1" paragraph>
-            {movie.description || 'Нет описания.'}
-          </Typography>
-        </CardContent>
+<CardContent>
+  <Typography variant="h4" gutterBottom>{movie.title} ({movie.year})</Typography>
+  {movie.runtime && (
+    <Typography variant="body1" color="text.secondary" gutterBottom>
+      Время: {movie.runtime}
+    </Typography>
+  )}
+  <Typography variant="body1" paragraph>
+    {movie.description || 'Нет описания.'}
+  </Typography>
+</CardContent>
         <Box sx={{ p: 2 }}>
           <Button component={Link} to="/movies" sx={{ mr: 2 }}>Назад</Button>
           

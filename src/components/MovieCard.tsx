@@ -26,16 +26,21 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, onDelete, onImport, import
           backgroundColor: '#eee',
         }}
       />
-      <CardContent sx={{ minHeight: 80 }}>
-        <Typography gutterBottom variant="h6" component="div" noWrap>
-          {movie.title} ({movie.year})
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {typeof movie.description === "string"
-            ? movie.description.slice(0, 60) + "..."
-            : ""}
-        </Typography>
-      </CardContent>
+<CardContent sx={{ minHeight: 80 }}>
+  <Typography gutterBottom variant="h6" component="div" noWrap>
+    {movie.title} ({movie.year})
+  </Typography>
+  {movie.runtime && (
+    <Typography variant="body2" color="text.secondary">
+      Время: {movie.runtime}
+    </Typography>
+  )}
+  <Typography variant="body2" color="text.secondary">
+    {typeof movie.description === "string"
+      ? movie.description.slice(0, 60) + "..."
+      : "Описание недоступно"}
+  </Typography>
+</CardContent>
     </Box>
     <CardActions sx={{ mt: 'auto' }}>
       <Button component={Link} to={`/movies/${movie.id}`} size="small">Подробнее</Button>
