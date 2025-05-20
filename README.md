@@ -88,4 +88,4 @@ MIT
 
 ## Автор
 
-- [Ваше имя или никнейм](https://github.com/otvetov)
+- [Roman Slushniy](https://github.com/otvetov)
