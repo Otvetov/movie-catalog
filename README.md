@@ -1,46 +1,91 @@
-# Getting Started with Create React App
+# Каталог Фильмов
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Современное одностраничное приложение (SPA) для поиска, добавления и хранения коллекции фильмов с использованием React, TypeScript, Zustand, Material UI и OMDb API.
 
-## Available Scripts
+## Возможности
 
-In the project directory, you can run:
+- 🔍 Поиск фильмов онлайн через OMDb API
+- ➕ Добавление фильмов вручную или импорт из поиска
+- 📋 Ведение личной коллекции фильмов (локально)
+- 📝 Просмотр подробной информации о фильме
+- 🗑️ Удаление фильмов из коллекции
+- 🎬 Отображение времени фильма, описания, постера
+- 🌙 Современный адаптивный дизайн на Material UI
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Быстрый старт
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 1. Клонируйте репозиторий
 
-### `npm test`
+```bash
+git clone https://github.com/otvetov/movie-catalog.git
+cd movie-catalog
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Установите зависимости
 
-### `npm run build`
+```bash
+npm install
+# или
+yarn install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Получите OMDb API ключ
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Зарегистрируйтесь на [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx) (бесплатно)
+- Получите ключ и сохраните его
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Настройте переменные окружения
 
-### `npm run eject`
+Создайте файл `.env` в корне проекта и добавьте:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```env
+REACT_APP_OMDB_API_KEY=your_api_key
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 5. Запустите приложение
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+# или
+yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Приложение будет доступно по адресу: [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Структура проекта
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+  api/           // Работа с OMDb API
+  components/    // UI-компоненты
+  pages/         // Страницы приложения
+  store/         // Хранилище Zustand
+  types/         // Типы TypeScript
+  App.tsx        // Главный компонент
+  index.tsx      // Точка входа
+```
+
+---
+
+## Технологии
+
+- **React** + **TypeScript**
+- **Zustand** — локальное хранилище данных
+- **Material UI** — UI-компоненты и стили
+- **React Router** — роутинг
+- **OMDb API** — поиск и получение информации о фильмах
+
+---
+
+## Лицензия
+
+MIT
+
+---
+
+## Автор
+
+- [Ваше имя или никнейм](https://github.com/otvetov)
